@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue框架实现</title>
+</head>
+<body>
+    <div id="app">
+        <p @click="onclick">{{count}}</p>
+        <p v-text="count"></p>
+        <p v-html="counts"></p>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:"#app",
+            data:{
+                count:0,
+                counts:'sd<span style="color:red">adas</span>dsad'
+            },
+            methods:{
+                onclick(){
+                    console.log(1)
+                }
+            }
+        })
+
+        setInterval(function(){
+            app.count++
+        },3000)
+    </script>
+</body>
+</html>
